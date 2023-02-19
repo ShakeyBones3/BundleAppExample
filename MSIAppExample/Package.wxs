@@ -1,0 +1,10 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+	<Package Name="MSIAppExample" Manufacturer="TODO Manufacturer" Version="1.0.0.0" UpgradeCode="{03CB88A8-0349-4F82-9AE1-27FB2FCE636A}" Compressed="true">
+		<MajorUpgrade DowngradeErrorMessage="!(loc.DowngradeError)" />
+
+		<MediaTemplate EmbedCab="yes"/>
+		<Feature Id="Main">
+			<ComponentGroupRef Id="ExampleComponents" />
+		</Feature>
+	</Package>
+</Wix>

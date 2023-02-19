@@ -1,0 +1,20 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:bal="http://wixtoolset.org/schemas/v4/wxs/bal">
+	<Bundle Name="BundleAppExample" Manufacturer="TODO Manufacturer" Version="1.0.0.0" UpgradeCode="{E60FBD1D-2F07-42D6-9C1F-739E6B63B34F}" Compressed="yes">
+		<BootstrapperApplication>
+			<bal:WixStandardBootstrapperApplication
+				LicenseUrl=""
+				Theme="hyperlinkLicense"
+				ThemeFile="Resources/Theme.xml"
+				LocalizationFile="Resources/Theme.wxl"
+				SuppressOptionsUI="true"
+				SuppressRepair="true" />
+		</BootstrapperApplication>
+
+		<Variable bal:Overridable="yes" Value="1" Name="CHOICE" />
+
+		<Chain>
+			<MsiPackage SourceFile="$(var.MSIAppExample.TargetPath)" InstallCondition="CHOICE = 1" />
+			<MsiPackage SourceFile="$(var.MSIAppExampleTwo.TargetPath)" InstallCondition="CHOICE = 2" />
+		</Chain>
+	</Bundle>
+</Wix>
